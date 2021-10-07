@@ -42,7 +42,7 @@ jobs:
           plugin_lines: yes
           plugin_projects: yes
           plugin_projects_limit: 4
-          # plugin_stargazers: yes
+          plugin_stargazers: no
           # plugin_wakatime: yes
           # plugin_wakatime_days: 7
           # plugin_wakatime_limit: 5
