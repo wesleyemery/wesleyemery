@@ -5,6 +5,12 @@ on:
   schedule: [{cron: "0 0 * * *"}]
   # Lines below let you run workflow manually and on each commit
   workflow_dispatch:
+env:
+  SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+  SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+  SPOTIFY_REDIRECT_URI: 'http://localhost:12345'
+
+
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
@@ -42,10 +48,37 @@ jobs:
           plugin_projects: yes
           plugin_projects_limit: 4
           plugin_stargazers: no
-          # plugin_wakatime: yes
-          # plugin_wakatime_days: 7
-          # plugin_wakatime_limit: 5
-          # plugin_wakatime_sections: time, projects, projects-graphs, languages, languages-graphs, editors, os
-          # plugin_wakatime_url: https://wakatime.com
-          # plugin_wakatime_user: misile
-          # plugin_wakatime_token: ${{ secrets.WAKATIME_TOKEN }}
+# 🎼 Music activity and suggestions
+
+#           plugin_music: true
+
+#           plugin_music_provider: "spotify"
+
+#           plugin_music_token: "$SPOTIFY_CLIENT_ID, $SPOTIFY_CLIENT_SECRET, $SPOTIFY_REDIRECT_URI"
+
+#           plugin_music_user: "we3kb.we@gmail.com"
+
+#           plugin_music_mode:
+#             description: Display mode
+#             default: <default-value>
+
+#           plugin_music_playlist:
+#             description: Playlist URL
+#             default: <default-value>
+
+#           plugin_music_limit:
+#             description: Display limit
+#             default: <default-value>
+
+#           plugin_music_played_at:
+#             description: Recently played - Last played timestamp
+#             default: <default-value>
+
+#           plugin_music_time_range:
+#             description: Top tracks - Time range
+#             default: <default-value>
+
+#           plugin_music_top_type:
+#             description: Top tracks - Display type
+#             default: <default-value>
+
