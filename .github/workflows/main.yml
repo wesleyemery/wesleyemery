@@ -5,10 +5,10 @@ on:
   schedule: [{cron: "0 0 * * *"}]
   # Lines below let you run workflow manually and on each commit
   workflow_dispatch:
-env:
-  SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
-  SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
-  SPOTIFY_REDIRECT_URI: 'http://localhost:12345'
+# env:
+#   SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+#   SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+#   SPOTIFY_REDIRECT_URI: 'http://localhost:12345'
 
 
 jobs:
@@ -47,7 +47,7 @@ jobs:
           plugin_languages_recent_load: 1000
           plugin_languages_sections: most-used, recently-used
           plugin_lines: yes
-          plugin_people: yes
+          plugin_people: no
           plugin_people_limit: 24
           plugin_people_size: 28
           plugin_people_types: followers, following
