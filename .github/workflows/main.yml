@@ -19,7 +19,7 @@ jobs:
       - uses: lowlighter/metrics@v3.33  # Updated to latest version
         with:
           # Your GitHub token
-          token: ${{ secrets.METRICS_TOKEN }}
+          token: ${{ secrets.METRIC_TOKEN }}
           
           # Options
           user: wesleyemery
@@ -104,4 +104,3 @@ jobs:
           plugin_activity_filter: all
           plugin_activity_visibility: public
           plugin_activity_timestamps: yes
-          
