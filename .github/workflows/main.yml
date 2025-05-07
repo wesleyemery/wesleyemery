@@ -112,6 +112,5 @@ jobs:
           plugin_rss_source: https://wesleyemery.dev/feed.xml
           plugin_rss_limit: 3
 
-
           # Stargazers (cool visual)
           plugin_stargazers: yes
