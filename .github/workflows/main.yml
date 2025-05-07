@@ -103,8 +103,8 @@ jobs:
           plugin_activity_timestamps: yes
 
           # Notable contributions (cool feature)
-          plugin_notable: yes
-          plugin_notable_repositories: yes
+          plugin_notable: no
+          plugin_notable_repositories: no
 
 
           # Stargazers (cool visual)
