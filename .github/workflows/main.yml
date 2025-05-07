@@ -74,15 +74,15 @@ jobs:
           plugin_reactions_limit_issues: 50
 
           # Music
-          plugin_music: yes
-          plugin_music_provider: spotify
-          plugin_music_mode: recent
-          plugin_music_token: ${{ env.SPOTIFY_CLIENT_ID }}|${{ env.SPOTIFY_CLIENT_SECRET }}|${{ env.SPOTIFY_REFRESH_TOKEN }}
-          plugin_music_limit: 5
-          plugin_music_played_at: yes
+          # plugin_music: yes
+          # plugin_music_provider: spotify
+          # plugin_music_mode: recent
+          # plugin_music_token: ${{ env.SPOTIFY_CLIENT_ID }}|${{ env.SPOTIFY_CLIENT_SECRET }}|${{ env.SPOTIFY_REFRESH_TOKEN }}
+          # plugin_music_limit: 5
+          # plugin_music_played_at: yes
 
           # Achievements
-          plugin_achievements: yes
+          plugin_achievements: no
           plugin_achievements_threshold: B
           plugin_achievements_secrets: yes
           plugin_achievements_display: compact
@@ -92,8 +92,7 @@ jobs:
           plugin_calendar_limit: 12
 
           # Projects
-          plugin_projects: yes
-          plugin_projects_limit: 4
+          plugin_projects: no
 
           # Activity
           plugin_activity: yes
@@ -107,10 +106,6 @@ jobs:
           plugin_notable: yes
           plugin_notable_repositories: yes
 
-          # RSS feed (optional blog, replace with your URL)
-          plugin_rss: yes
-          plugin_rss_source: https://wesleyemery.dev/feed.xml
-          plugin_rss_limit: 3
 
           # Stargazers (cool visual)
           plugin_stargazers: yes
