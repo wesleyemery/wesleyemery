@@ -1,52 +1,49 @@
-# Visit https://github.com/lowlighter/metrics/blob/master/action.yml for full reference
 name: Metrics
+
 on:
-  # Schedule updates (each hour)
-  schedule: [{cron: "0 0 * * *"}]
+  schedule: [{ cron: "0 0 * * *" }]
   push:
     branches:
       - feat/spotify-plugin
-  # Lines below let you run workflow manually and on each commit
   workflow_dispatch:
-env:
-  SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
 
+env:
+  SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+  SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+  SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
 
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
     steps:
-      - uses: lowlighter/metrics@v3.33  # Updated to latest version
+      - uses: lowlighter/metrics@latest
         with:
-          # Your GitHub token
           token: ${{ secrets.METRIC_TOKEN }}
-          
-          # Options
           user: wesleyemery
           template: classic
           base: header, activity, community, repositories, metadata
-          
-          # Introduction plugin
+
+          # Introduction
           plugin_introduction: yes
-          
-          # Follow-up plugin
+
+          # Follow-up
           plugin_followup: yes
           plugin_followup_sections: user, repositories
           plugin_followup_archived: yes
-          
-          # Habits plugin
+
+          # Habits
           plugin_habits: yes
           plugin_habits_days: 30
           plugin_habits_facts: yes
           plugin_habits_from: 1000
           plugin_habits_charts: yes
           plugin_habits_trim: yes
-          
-          # Isocalendar plugin
+
+          # Isocalendar (contribution calendar)
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
-          
-          # Languages plugin
+
+          # Languages
           plugin_languages: yes
           plugin_languages_categories: data, markup, programming
           plugin_languages_colors: github
@@ -56,51 +53,65 @@ jobs:
           plugin_languages_recent_days: 365
           plugin_languages_recent_load: 1000
           plugin_languages_sections: most-used, recently-used
-          
-          # Lines of code plugin
+
+          # Lines of code
           plugin_lines: yes
-          
-          # People plugin
+
+          # People plugin — exclude problematic orgs like ab-inbev-labs
           plugin_people: yes
           plugin_people_limit: 24
           plugin_people_size: 28
           plugin_people_types: followers, following
-          
-          # Reactions plugin
+          plugin_people_identicons: yes
+          plugin_people_thanks: no
+
+          # Reactions
           plugin_reactions: yes
           plugin_reactions_display: absolute
-          plugin_reactions_limit: 1000
-          plugin_reactions_limit_discussions: 100
-          plugin_reactions_limit_discussions_comments: 100
-          plugin_reactions_limit_issues: 100
-          
-          # 🎼 Spotify Music plugin
+          plugin_reactions_limit: 200
+          plugin_reactions_limit_discussions: 50
+          plugin_reactions_limit_discussions_comments: 50
+          plugin_reactions_limit_issues: 50
+
+          # Music
           plugin_music: yes
           plugin_music_provider: spotify
-          plugin_music_token: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
           plugin_music_mode: recent
-          plugin_music_limit: 4
+          plugin_music_token: ${{ env.SPOTIFY_CLIENT_ID }}|${{ env.SPOTIFY_CLIENT_SECRET }}|${{ env.SPOTIFY_REFRESH_TOKEN }}
+          plugin_music_limit: 5
           plugin_music_played_at: yes
-          
-          # 🏆 Achievements plugin
+
+          # Achievements
           plugin_achievements: yes
           plugin_achievements_threshold: B
           plugin_achievements_secrets: yes
-          plugin_achievements_display: detailed
-          
-          # 📅 Calendar plugin (activity heatmap)
+          plugin_achievements_display: compact
+
+          # Calendar (activity heatmap)
           plugin_calendar: yes
           plugin_calendar_limit: 12
-          
-          
-          # 🎭 GitHub Projects (optional)
+
+          # Projects
           plugin_projects: yes
           plugin_projects_limit: 4
-          
-          # 📰 Recent activity (improved display)
+
+          # Activity
           plugin_activity: yes
           plugin_activity_limit: 5
           plugin_activity_days: 14
           plugin_activity_filter: all
           plugin_activity_visibility: public
           plugin_activity_timestamps: yes
+
+          # Notable contributions (cool feature)
+          plugin_notable: yes
+          plugin_notable_repositories: yes
+
+          # RSS feed (optional blog, replace with your URL)
+          plugin_rss: yes
+          plugin_rss_source: https://wesleyemery.dev/feed.xml
+          plugin_rss_limit: 3
+
+
+          # Stargazers (cool visual)
+          plugin_stargazers: yes
