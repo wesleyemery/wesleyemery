@@ -89,7 +89,7 @@ jobs:
 
           # Calendar (activity heatmap)
           plugin_calendar: yes
-          plugin_calendar_limit: 12
+          plugin_calendar_limit: 5
 
           # Projects
           plugin_projects: no
