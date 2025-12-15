@@ -52,7 +52,7 @@ jobs:
           plugin_languages_recent_categories: markup, programming
           plugin_languages_recent_days: 14
           plugin_languages_recent_load: 100
-          plugin_languages_sections: most-used, recently-used
+          plugin_languages_sections: most-used
 
           # Lines of code
           plugin_lines: yes
