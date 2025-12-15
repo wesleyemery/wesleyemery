@@ -74,12 +74,12 @@ jobs:
           plugin_reactions_limit_issues: 50
 
           # Music
-          # plugin_music: yes
-          # plugin_music_provider: spotify
-          # plugin_music_mode: recent
-          # plugin_music_token: ${{ env.SPOTIFY_CLIENT_ID }}|${{ env.SPOTIFY_CLIENT_SECRET }}|${{ env.SPOTIFY_REFRESH_TOKEN }}
-          # plugin_music_limit: 5
-          # plugin_music_played_at: yes
+          plugin_music: yes
+          plugin_music_provider: spotify
+          plugin_music_mode: recent
+          plugin_music_token: ${{ env.SPOTIFY_CLIENT_ID }}|${{ env.SPOTIFY_CLIENT_SECRET }}|${{ env.SPOTIFY_REFRESH_TOKEN }}
+          plugin_music_limit: 5
+          plugin_music_played_at: yes
 
           # Achievements
           plugin_achievements: no
