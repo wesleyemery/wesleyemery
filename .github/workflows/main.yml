@@ -33,9 +33,9 @@ jobs:
 
           # Habits
           plugin_habits: yes
-          plugin_habits_days: 30
+          plugin_habits_days: 14
           plugin_habits_facts: yes
-          plugin_habits_from: 1000
+          plugin_habits_from: 200
           plugin_habits_charts: yes
           plugin_habits_trim: yes
 
@@ -50,9 +50,9 @@ jobs:
           plugin_languages_limit: 8
           plugin_languages_details: percentage
           plugin_languages_recent_categories: markup, programming
-          plugin_languages_recent_days: 365
-          plugin_languages_recent_load: 1000
-          plugin_languages_sections: most-used
+          plugin_languages_recent_days: 14
+          plugin_languages_recent_load: 100
+          plugin_languages_sections: most-used, recently-used
 
           # Lines of code
           plugin_lines: yes
@@ -74,7 +74,7 @@ jobs:
           plugin_reactions_limit_issues: 50
 
           # Music
-          plugin_music: yes
+          plugin_music: no
           plugin_music_provider: spotify
           plugin_music_mode: recent
           plugin_music_token: ${{ env.SPOTIFY_CLIENT_ID }}|${{ env.SPOTIFY_CLIENT_SECRET }}|${{ env.SPOTIFY_REFRESH_TOKEN }}
@@ -97,7 +97,7 @@ jobs:
           # Activity
           plugin_activity: yes
           plugin_activity_limit: 5
-          plugin_activity_days: 14
+          plugin_activity_days: 7
           plugin_activity_filter: all
           plugin_activity_visibility: public
           plugin_activity_timestamps: yes
